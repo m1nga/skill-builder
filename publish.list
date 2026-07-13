@@ -1,0 +1,8 @@
+# Skills that publish to GitHub. One name per line (must match a directory in ~/.claude/skills).
+# Lines starting with # are ignored. The daily chore syncs these; Codex may promote new
+# skills here from pending.list after judging them safe to publish.
+coffee-brewing
+morning-brief
+product-experience-officer
+prompt-craft
+prompt4ming

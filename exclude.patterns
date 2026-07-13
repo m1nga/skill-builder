@@ -1,0 +1,10 @@
+# rsync exclude patterns applied to EVERY published skill.
+# These hold user-local data that must never reach the public repo.
+knowledge/
+memory/
+logs/
+evals/
+__pycache__/
+voice.yaml
+*.local.*
+.DS_Store

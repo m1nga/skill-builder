@@ -1,0 +1,16 @@
+# skill-builder — Ming's Claude Code skills
+
+> Self-made Claude Code agent skills, auto-published daily from the author's machine.
+> Each is a working SKILL.md the author actually uses; adapt personal context to yourself.
+
+## Skills
+
+- product-experience-officer: zero-experience first-time-user product audit (screenshots or live-driving the product), PM-ready findings with severity, fixes, effort
+- morning-brief: overnight cross-session work digest + five evidence-based efficiency suggestions, delivered while you sleep
+- prompt4ming: voice-dictated messy multi-task prompts → atomic English specs, nothing added
+- prompt-craft: casual ideas → AI-ready prompts, with a bring-your-own local knowledge layer
+- coffee-brewing: photo-based coffee dial-in assistant with bean memory (hardware-specific template)
+
+## Install
+
+Clone and copy a skill folder into ~/.claude/skills/. Source: https://github.com/m1nga/skill-builder

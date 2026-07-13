@@ -1,0 +1,5 @@
+# Skills detected but not yet cleared for publishing. The daily chore (Codex) reads each,
+# judges whether it is Ming's own creation and free of personal/private data, then moves it
+# to publish.list (clean) or private.list (with a one-line reason). Unsure → stays here.
+grill-me
+voice-extractor
