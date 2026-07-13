@@ -74,6 +74,13 @@ Every skill follows the Agent Skills structure: a `SKILL.md` file plus optional
 `references/` and agent-specific metadata. The core instructions and references are portable;
 agents safely ignore metadata they do not use.
 
+## Feedback and discussion
+
+Share results, adaptations, and questions in [GitHub Discussions](https://github.com/m1nga/skill-builder/discussions).
+Use [Issues](https://github.com/m1nga/skill-builder/issues) for reproducible skill bugs or
+documentation errors. When useful, include the agent, model, input, output, and what you
+expected instead; remove private data before posting.
+
 ## Publishing and privacy
 
 A daily local job syncs approved skills, excludes known private-data directories, scans for
