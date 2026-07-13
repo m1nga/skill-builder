@@ -53,6 +53,7 @@ ensure_visible() {
 
 ensure_visible "$HOME/.agents/skills"
 ensure_visible "$HOME/.claude/skills"
+ensure_visible "$HOME/.codex/skills"
 
 IS_NEW=0
 if ! grep -qx "$NAME" "$REPO/publish.list"; then
