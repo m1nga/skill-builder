@@ -9,6 +9,7 @@
 - product-experience-officer: perform a zero-context first-time-user product audit and return prioritized, actionable UX findings
 - morning-brief: create an overnight cross-session work digest with progress, open loops, and evidence-based work improvements
 - explain-ai-reply: explain a confusing AI response against the original request and separate verified, claimed, proposed, failed, missed, and user-required work
+- think4ming: thinking-partner protocol — restore the real need, inventory live reality, open options, one recommendation, hand back the decisions
 - prompt4ming: lightly clarify rough or voice-dictated input while preserving meaning and avoiding prompt overengineering
 - prompt-craft: turn casual ideas into AI-ready prompts with an optional bring-your-own local knowledge layer
 - coffee-brewing: interpret coffee photos and taste feedback to recommend recipes and iterative dial-in adjustments
