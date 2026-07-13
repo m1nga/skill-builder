@@ -4,10 +4,11 @@
   "groupings": [
     {
       "title": "Product building",
-      "description": "Map the product system and audit the experience users actually encounter.",
+      "description": "Map the product system, audit the experience users encounter, and close each iteration cleanly.",
       "skills": [
         "map-product-system",
-        "product-experience-officer"
+        "product-experience-officer",
+        "iteration-close"
       ]
     },
     {

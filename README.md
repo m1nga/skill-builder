@@ -19,6 +19,7 @@ client data, personal business context, and third-party skills stay local.
 | Skill | What it does |
 |---|---|
 | [map-product-system](skills/map-product-system/) | Maps a rough product idea or existing product end to end: user journeys, capability boundaries, platform/customer/runtime mandates, data lifecycles, agent-service-human responsibilities, architecture, failure paths, governance, gaps, and delivery slices. |
+| [iteration-close](skills/iteration-close/) | Closes a product iteration in any repo: distills this round's decisions into the repo's own record, deletes superseded files (git history is the archive), verifies upload and a zero-context takeover probe separately, rehearses the one-command new-machine bootstrap, then tags and seeds the next iteration. Adapts to each repo's conventions and creates the minimum where one is missing. |
 | [product-experience-officer](skills/product-experience-officer/) | Experiences a product-in-development as a zero-context first-time user, then reports prioritized UX findings, concrete fixes, effort estimates, and follow-ups. |
 | [morning-brief](skills/morning-brief/) | Produces an overnight cross-session work digest with yesterday's progress, open loops, and evidence-based ways to improve the next workday. |
 | [explain-ai-reply](skills/explain-ai-reply/) | Rewrites a confusing AI response in plain language, anchored to the original request, and separates verified work, unsupported completion claims, proposals, failures, drift, and decisions that need the user. |
