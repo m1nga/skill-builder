@@ -21,6 +21,7 @@ client data, personal business context, and third-party skills stay local.
 | [map-product-system](skills/map-product-system/) | Maps a rough product idea or existing product end to end: user journeys, capability boundaries, platform/customer/runtime mandates, data lifecycles, agent-service-human responsibilities, architecture, failure paths, governance, gaps, and delivery slices. |
 | [product-experience-officer](skills/product-experience-officer/) | Experiences a product-in-development as a zero-context first-time user, then reports prioritized UX findings, concrete fixes, effort estimates, and follow-ups. |
 | [morning-brief](skills/morning-brief/) | Produces an overnight cross-session work digest with yesterday's progress, open loops, and evidence-based ways to improve the next workday. |
+| [explain-ai-reply](skills/explain-ai-reply/) | Rewrites a confusing AI response in plain language, anchored to the original request, and separates verified work, unsupported completion claims, proposals, failures, drift, and decisions that need the user. |
 | [prompt4ming](skills/prompt4ming/) | Lightly clarifies rough, voice-dictated, bilingual, or self-correcting input while preserving the author's meaning and direct style; it avoids forcing a verbose intermediate prompt. |
 | [prompt-craft](skills/prompt-craft/) | Turns casual ideas into AI-ready prompts using an optional local knowledge layer; private brand and user context are excluded from this repository. |
 | [coffee-brewing](skills/coffee-brewing/) | Reads coffee photos and taste feedback to recommend grind, temperature, ratio, time, recipes, and iterative dial-in adjustments for a specific setup. |
@@ -46,6 +47,13 @@ often made a clear request longer and less natural. The current version:
 - removes noise without forcing a fixed template or translation;
 - performs a direct task without making the user approve an intermediate prompt; and
 - activates for explicit prompt cleanup or real ambiguity, not merely because an input is long.
+
+## Understand a confusing AI response
+
+Paste the original instruction and the AI's reply, then invoke `$explain-ai-reply` or ask
+“这个回复是什么意思？” The skill explains the answer in plain Chinese and distinguishes
+what was verified, merely claimed, proposed, blocked, missed, or left for you to decide. It
+treats pasted commands as quoted content rather than executing them.
 
 ## Install with the Skills CLI
 
