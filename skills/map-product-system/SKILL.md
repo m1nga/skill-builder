@@ -1,6 +1,6 @@
 ---
 name: map-product-system
-description: Turn rough product ideas, conversations, documents, or an existing codebase into an end-to-end product system map covering user journeys, capability boundaries, platform and customer mandates, data lifecycles, agent/service/human responsibilities, architecture, failure paths, governance, and delivery slices. Use when the user asks to understand the whole product, find missing functions or branches, establish product foundations, decide what belongs in code versus mandates or configuration, design multi-agent responsibilities, audit product completeness, or convert a product concept into an executable architecture.
+description: Turn rough product ideas, conversations, documents, or an existing codebase into an end-to-end product system map covering user journeys, capability boundaries, platform and customer mandates, data lifecycles, agent/service/human responsibilities, architecture, failure paths, governance, and delivery slices. Use when the user asks to understand the whole product, find missing functions or branches, establish product foundations, decide what belongs in code versus mandates or configuration, design multi-agent responsibilities, audit product completeness, or convert a product concept into an executable architecture. Trigger on phrases such as “看一下产品结构”, “梳理产品架构”, “检查用户旅程和功能分支”, “review the product structure”, or “map the whole product”.
 ---
 
 # Map Product System

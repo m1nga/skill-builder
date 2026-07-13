@@ -26,9 +26,10 @@ layers, credentials, client data, and personal business context stay local.
 
 ## Recommended pairing: prompt clarity + product architecture
 
-`map-product-system` accepts raw product thinking directly. Say “review the product
-structure,” “map the whole product,” or explicitly invoke `$map-product-system`; it will map
-the product without first turning your words into a large formal prompt.
+`map-product-system` accepts raw product thinking directly. Say “看一下产品结构,” “梳理产品架构,”
+“review the product structure,” “map the whole product,” or explicitly invoke
+`$map-product-system`; it will map the product without first turning your words into a large
+formal prompt.
 
 Use `prompt4ming` only when you want to reuse a cleaned-up prompt elsewhere. It extracts the
 core objective and requirements with minimal rewriting. You can then pass that prompt to
