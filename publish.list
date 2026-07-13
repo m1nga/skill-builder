@@ -1,6 +1,6 @@
-# Skills Ming explicitly approved for public release. One name per line; each must resolve
-# to a directory in ~/.claude/skills (a symlink to another agent's canonical copy is fine).
-# Lines starting with # are ignored. Detection alone never authorizes publication.
+# Completed self-authored skills released to GitHub. One name per line; each must resolve to
+# ~/.claude/skills (a symlink to the canonical Codex/agent copy is fine). Completing a skill
+# authorizes release; this is not a manual approval list.
 coffee-brewing
 map-product-system
 morning-brief

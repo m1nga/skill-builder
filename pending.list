@@ -1,5 +1,5 @@
-# Skills detected but not yet cleared for publishing. Codex may review and classify them,
-# but a clean self-made skill stays here until Ming explicitly approves public release.
-# Marketplace/private skills move to private.list; genuinely uncertain skills stay here.
+# Ambiguous pre-existing skills whose authorship or privacy status is unresolved. New skills
+# completed by Codex or Claude bypass this list and release immediately. Marketplace/private
+# skills move to private.list; genuinely uncertain existing skills stay here.
 grill-me
 voice-extractor

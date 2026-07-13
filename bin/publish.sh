@@ -1,12 +1,13 @@
 #!/bin/bash
-# skill-builder daily publish — syncs Ming's approved Agent Skills to GitHub.
+# skill-builder batch publisher — syncs already released Agent Skills to GitHub.
+# New skills enter through release-skill.sh when their creating agent finishes them.
 #
 # Division of labor:
 #   - Deterministic work (sync, secret scan, commit, push) is plain shell — never depends on an AI.
 #   - Editorial work (README upkeep, judging pending skills, light GEO) goes to Codex when a
 #     working `codex` is on PATH (see AGENTS.md). Without Codex the run still publishes; new
 #     skills just wait in pending.list instead of being auto-promoted.
-set -u
+set -euo pipefail
 export PATH="$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin"
 REPO="$(cd "$(dirname "$0")/.." && pwd)"
 SRC="$HOME/.claude/skills"
@@ -34,7 +35,16 @@ while IFS= read -r name; do
   fi
 done < publish.list
 
-# 2) Secret scan on exactly what would go public. Anything suspicious aborts the whole run.
+# 2) Validate every public skill when the local validator is available.
+VALIDATOR="$HOME/.codex/skills/.system/skill-creator/scripts/quick_validate.py"
+if [ -f "$VALIDATOR" ]; then
+  while IFS= read -r name; do
+    [ -z "$name" ] && continue; case "$name" in \#*) continue;; esac
+    python3 "$VALIDATOR" "skills/$name"
+  done < publish.list
+fi
+
+# 3) Secret scan on exactly what would go public. Anything suspicious aborts the whole run.
 SECRET_RE="sk-ant-|sk-proj-[A-Za-z0-9_-]{20,}|ghp_[A-Za-z0-9]{20,}|gho_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|xox[baprs]-[A-Za-z0-9-]{20,}|AKIA[0-9A-Z]{16}|AIza[0-9A-Za-z_-]{35}|npm_[A-Za-z0-9]{20,}|pypi-AgEIcHlwaS5vcmc[A-Za-z0-9_-]{10,}|-----BEGIN [A-Z ]*PRIVATE KEY|(OPENAI_API_KEY|ANTHROPIC_API_KEY|GITHUB_TOKEN|AWS_SECRET_ACCESS_KEY)[[:space:]]*[:=][[:space:]]*['\"]?[A-Za-z0-9_./+-]{16,}"
 if grep -rlIE "$SECRET_RE" skills/ 2>/dev/null; then
   echo "ABORT: secret-like string detected above — reverting sync, nothing published."
@@ -42,7 +52,8 @@ if grep -rlIE "$SECRET_RE" skills/ 2>/dev/null; then
   exit 1
 fi
 
-# 3) Detect skills not yet on any list → pending.list (a human or Codex decides later).
+# 4) Detect unrelated pre-existing skills for later classification. A newly completed skill
+# is added to publish.list by release-skill.sh before this batch publisher runs.
 for d in "$SRC"/*/; do
   n="$(basename "$d")"
   if ! grep -qx "$n" publish.list pending.list private.list 2>/dev/null; then
@@ -51,7 +62,7 @@ for d in "$SRC"/*/; do
   fi
 done
 
-# 4) Editorial pass — Codex if available. A missing editor must not create a date-only diff.
+# 5) Editorial pass — Codex if available. A missing editor must not create a date-only diff.
 if [ "${SKIP_EDITOR:-0}" = "1" ]; then
   echo "editorial chore skipped for this run"
 elif command -v codex >/dev/null 2>&1 && codex login status >/dev/null 2>&1; then
@@ -61,13 +72,34 @@ else
   echo "codex unavailable — editorial chore deferred"
 fi
 
-# 5) Commit and push only when something actually changed.
+# 6) Validate catalog integrity before any commit.
+python3 - <<'PY'
+from pathlib import Path
+import json
+import re
+
+published = {
+    line.strip()
+    for line in Path("publish.list").read_text().splitlines()
+    if line.strip() and not line.lstrip().startswith("#")
+}
+readme = set(re.findall(r"^\| \[([^]]+)\]\(skills/[^)]+/\) \|", Path("README.md").read_text(), re.M))
+llms = set(re.findall(r"^- ([a-z0-9-]+):", Path("llms.txt").read_text(), re.M))
+json.loads(Path("skills.sh.json").read_text())
+if published != readme or published != llms:
+    raise SystemExit(
+        f"catalog mismatch: publish={sorted(published)} readme={sorted(readme)} llms={sorted(llms)}"
+    )
+PY
+
+# 7) Commit and push only when something actually changed.
 if [ -n "$(git status --porcelain)" ]; then
   git add -A
-  git commit -m "daily publish: sync skills ($(date +%F))"
-  git push origin main && echo "pushed to origin/main"
+  git commit -m "${COMMIT_MESSAGE:-publish: sync skills}"
+  git push origin main
+  echo "pushed to origin/main"
 else
-  echo "no changes — nothing to publish today"
+  echo "no changes — nothing to publish"
 fi
 echo "=== $(date '+%F %T') run end ==="
 } >> "$LOG" 2>&1

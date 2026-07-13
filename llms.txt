@@ -24,5 +24,5 @@ portable, lightly cleaned prompt is needed; chaining is optional.
 - Manual Claude Code location: `~/.claude/skills/`
 - Manual Codex location: `~/.codex/skills/`
 
-New skills are published only after Ming explicitly approves them. Private knowledge and
-personal business data are excluded from the public catalog.
+Self-authored skills are published automatically when Codex or Claude finishes and validates
+them. Private knowledge, personal business data, and third-party skills are excluded.

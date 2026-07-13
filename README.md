@@ -10,8 +10,9 @@ architecture, first-time-user product audits, prompt clarity, daily work synthes
 coffee dialing. They are working tools rather than generic prompt collections: install one,
 inspect it, and adapt any personal assumptions to your environment.
 
-This repository auto-publishes only the skills I have explicitly approved. Private knowledge
-layers, credentials, client data, and personal business context stay local.
+Publishing is part of finishing a self-authored skill: once Codex or Claude completes and
+validates it, the skill is released immediately. Private knowledge layers, credentials,
+client data, personal business context, and third-party skills stay local.
 
 ## Skills
 
@@ -83,9 +84,10 @@ expected instead; remove private data before posting.
 
 ## Publishing and privacy
 
-A daily local job syncs approved skills, excludes known private-data directories, scans for
-secret-like values, and publishes only real changes. Newly detected skills remain pending
-until I explicitly approve public release. `README.md` and `llms.txt` are maintained as
-factual discovery surfaces, without keyword stuffing or artificial activity.
+There is no scheduled polling job. Completing a self-authored skill triggers an immediate
+release: validate, exclude private-data directories, scan for secret-like values, update the
+catalog and GEO surfaces, commit, push, and verify a remote Skills CLI install. Ambiguous
+pre-existing and third-party skills are never inferred to be publishable. `README.md` and
+`llms.txt` remain factual discovery surfaces without keyword stuffing or artificial activity.
 
 _Last updated: 2026-07-13_
