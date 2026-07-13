@@ -1,0 +1,4 @@
+interface:
+  display_name: "Product System Architect"
+  short_description: "Map the whole product from journey to agents"
+  default_prompt: "Use $map-product-system to turn this product idea into a complete, evidence-labeled system map."

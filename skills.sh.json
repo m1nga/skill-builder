@@ -1,0 +1,30 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "Product building",
+      "description": "Map the product system and audit the experience users actually encounter.",
+      "skills": [
+        "map-product-system",
+        "product-experience-officer"
+      ]
+    },
+    {
+      "title": "Prompts and work",
+      "description": "Clarify intent, craft reusable prompts, and synthesize daily work.",
+      "skills": [
+        "prompt4ming",
+        "prompt-craft",
+        "morning-brief"
+      ]
+    },
+    {
+      "title": "Personal craft",
+      "description": "Specialized workflows built from hands-on personal practice.",
+      "skills": [
+        "coffee-brewing"
+      ]
+    }
+  ]
+}

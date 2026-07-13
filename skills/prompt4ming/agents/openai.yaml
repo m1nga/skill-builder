@@ -1,0 +1,4 @@
+interface:
+  display_name: "Prompt4Ming"
+  short_description: "Clarify intent without overengineering the prompt"
+  default_prompt: "Use $prompt4ming to lightly clarify this request while preserving my meaning and voice."

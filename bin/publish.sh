@@ -1,5 +1,5 @@
 #!/bin/bash
-# skill-builder daily publish — syncs Ming's self-made Claude Code skills to GitHub.
+# skill-builder daily publish — syncs Ming's approved Agent Skills to GitHub.
 #
 # Division of labor:
 #   - Deterministic work (sync, secret scan, commit, push) is plain shell — never depends on an AI.
@@ -35,7 +35,8 @@ while IFS= read -r name; do
 done < publish.list
 
 # 2) Secret scan on exactly what would go public. Anything suspicious aborts the whole run.
-if grep -rlIE "sk-ant-|ghp_[A-Za-z0-9]{20,}|gho_[A-Za-z0-9]{20,}|AKIA[0-9A-Z]{16}|-----BEGIN [A-Z ]*PRIVATE KEY" skills/ 2>/dev/null; then
+SECRET_RE="sk-ant-|sk-proj-[A-Za-z0-9_-]{20,}|ghp_[A-Za-z0-9]{20,}|gho_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|xox[baprs]-[A-Za-z0-9-]{20,}|AKIA[0-9A-Z]{16}|AIza[0-9A-Za-z_-]{35}|npm_[A-Za-z0-9]{20,}|pypi-AgEIcHlwaS5vcmc[A-Za-z0-9_-]{10,}|-----BEGIN [A-Z ]*PRIVATE KEY|(OPENAI_API_KEY|ANTHROPIC_API_KEY|GITHUB_TOKEN|AWS_SECRET_ACCESS_KEY)[[:space:]]*[:=][[:space:]]*['\"]?[A-Za-z0-9_./+-]{16,}"
+if grep -rlIE "$SECRET_RE" skills/ 2>/dev/null; then
   echo "ABORT: secret-like string detected above — reverting sync, nothing published."
   git checkout -- skills/ 2>/dev/null
   exit 1
@@ -50,13 +51,14 @@ for d in "$SRC"/*/; do
   fi
 done
 
-# 4) Editorial pass — Codex if available, otherwise just freshen the README date stamp.
-if command -v codex >/dev/null 2>&1 && codex login status >/dev/null 2>&1; then
+# 4) Editorial pass — Codex if available. A missing editor must not create a date-only diff.
+if [ "${SKIP_EDITOR:-0}" = "1" ]; then
+  echo "editorial chore skipped for this run"
+elif command -v codex >/dev/null 2>&1 && codex login status >/dev/null 2>&1; then
   echo "codex available — running editorial chore"
   codex exec --full-auto "Read AGENTS.md in the current repo and perform the daily publish chore described there. Do not run git push; the wrapper script handles the push." || echo "codex chore failed (non-fatal)"
 else
-  echo "codex unavailable — shell fallback (README date stamp only)"
-  /usr/bin/sed -i '' "s/^_Last updated: .*_$/_Last updated: $(date +%F)_/" README.md 2>/dev/null
+  echo "codex unavailable — editorial chore deferred"
 fi
 
 # 5) Commit and push only when something actually changed.

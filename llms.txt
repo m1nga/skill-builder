@@ -1,16 +1,28 @@
-# skill-builder — Ming's Claude Code skills
+# skill-builder — cross-agent SKILL.md workflows by Ming
 
-> Self-made Claude Code agent skills, auto-published daily from the author's machine.
-> Each is a working SKILL.md the author actually uses; adapt personal context to yourself.
+> Practical Agent Skills used with Claude Code, Codex, and compatible agents. Public
+> repository: https://github.com/m1nga/skill-builder
 
 ## Skills
 
-- product-experience-officer: zero-experience first-time-user product audit (screenshots or live-driving the product), PM-ready findings with severity, fixes, effort
-- morning-brief: overnight cross-session work digest + five evidence-based efficiency suggestions, delivered while you sleep
-- prompt4ming: voice-dictated messy multi-task prompts → atomic English specs, nothing added
-- prompt-craft: casual ideas → AI-ready prompts, with a bring-your-own local knowledge layer
-- coffee-brewing: photo-based coffee dial-in assistant with bean memory (hardware-specific template)
+- map-product-system: map a product end to end across user journeys, capabilities, mandates, data, agents/services/humans, architecture, failures, governance, gaps, and delivery slices
+- product-experience-officer: perform a zero-context first-time-user product audit and return prioritized, actionable UX findings
+- morning-brief: create an overnight cross-session work digest with progress, open loops, and evidence-based work improvements
+- prompt4ming: lightly clarify rough or voice-dictated input while preserving meaning and avoiding prompt overengineering
+- prompt-craft: turn casual ideas into AI-ready prompts with an optional bring-your-own local knowledge layer
+- coffee-brewing: interpret coffee photos and taste feedback to recommend recipes and iterative dial-in adjustments
+
+## Recommended pairing
+
+Use map-product-system directly on raw product thinking. Use prompt4ming first only when a
+portable, lightly cleaned prompt is needed; chaining is optional.
 
 ## Install
 
-Clone and copy a skill folder into ~/.claude/skills/. Source: https://github.com/m1nga/skill-builder
+- All skills: `npx skills add m1nga/skill-builder`
+- One skill: `npx skills add https://github.com/m1nga/skill-builder --skill map-product-system`
+- Manual Claude Code location: `~/.claude/skills/`
+- Manual Codex location: `~/.codex/skills/`
+
+New skills are published only after Ming explicitly approves them. Private knowledge and
+personal business data are excluded from the public catalog.
