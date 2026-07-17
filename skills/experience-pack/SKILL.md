@@ -1,0 +1,119 @@
+---
+name: experience-pack
+description: >
+  Two-layer experience system for any project: keep a per-project EXPERIENCE.md
+  ledger (dated entries: what happened, what we did, what it cost), then
+  distill it through an experience-vs-decision boundary test into portable,
+  noun-free lessons that other projects can safely reuse — experience inherits,
+  decisions die. Ships a reference pack distilled from a real 5-rebuild
+  contamination saga (source-lock bundles, planner/executor/
+  verifier role isolation, zero-context probes, quarantined banned-noun lists,
+  bounded repair loops, multi-AI reference-not-instruction triage) plus five
+  prevention advices. Use when the user says 经验包 / 记录经验 / 复盘 / 经验文件 /
+  沉淀经验 / experience pack / lessons learned / post-mortem / record this
+  experience / distill experience / "what did we learn" / wants a project to
+  learn from another project's history, or after any expensive incident worth
+  recording. NOT for closing an iteration (use iteration-close) and NOT a
+  decision register — decisions stay in the project's own truth files.
+---
+
+# Experience Pack
+
+One sentence: every project keeps its own experience ledger; a boundary test
+distills the portable part; only the portable part travels between projects.
+
+## The two layers
+
+| Layer | File | Owner | Content rules |
+|---|---|---|---|
+| Ledger | `EXPERIENCE.md` in the project root | the project | dated, concrete, project specifics allowed; process experience only — never product truth, never a decision register |
+| Portable | the project's portable-lessons file (e.g. `LESSONS.md`) and/or this skill's reference pack | travels | abstract, product-noun-free, true in a DIFFERENT project read by a stranger |
+
+Pipeline: something happens → ledger entry (same day, while it hurts) →
+periodic distillation pass → portable lessons. Strategy and product decisions
+never travel: **experience inherits, decisions die.**
+
+## Protocol A — RECORD (ledger)
+
+Create `EXPERIENCE.md` at the project root on day one (or on first use).
+Append an entry when any of these happen: an incident cost real time/money/
+trust; a method visibly worked; an independent reviewer caught something the
+author missed; a collaboration pattern succeeded or failed; the user corrected
+the agent's course.
+
+Entry format:
+
+```
+### YYYY-MM-DD — title
+**What happened:** facts, concrete.
+**What we did:** the response, concrete.
+**What worked / what failed:** both, honestly.
+**Cost:** time / tokens / trust / rework.
+**Portable?** yes → <lesson-slug> | not yet | no (project-specific).
+```
+
+Rules: record process experience, not product facts; if the workspace has
+contamination-hygiene rules (banned nouns), the ledger obeys them; never
+backdate or rewrite old entries — append corrections as new entries.
+
+## Protocol B — DISTILL (boundary test)
+
+For each ledger entry marked "Portable? yes/not yet", run the tests in order:
+
+1. **Substitution test** — strip every proper noun and specific number. Does
+   the statement still teach something? Collapses → it is a decision, dies.
+2. **Mechanism vs choice** — does it say how things work or fail (mechanism →
+   inherit), or who/what/how much was chosen (choice → dies)?
+3. **Re-derivation test** — could a smart stranger re-derive it from the new
+   project's own context? If it could only come from the old project's
+   strategy, it is the old strategy talking — dies.
+4. **Sunk-cost test** — is its only value that effort was spent on it? Dies.
+5. **Verifiability test** — does checking it require a dead noun? Abstract it
+   or let it die.
+
+Survivors are rewritten as one abstract imperative line + why + how to apply,
+tagged with provenance ("prior project, distilled · date"). Ambiguous items
+default to DIE — the ledger keeps them recoverable for a later pass.
+DOWNGRADE (rare): a strategy-shaped artifact re-enters another project only as
+an explicit HYPOTHESIS with a re-validation condition, and only by the user's
+call — never silently.
+
+## Protocol C — SHARE / APPLY (another project learns from this one)
+
+1. In the receiving project: read `references/rebuild-experience-pack.md`
+   (this skill's packaged saga) and/or the source project's portable-lessons
+   file — never the source project's ledger, truth files, or strategy.
+2. Bootstrap the receiving project's own `EXPERIENCE.md` (Protocol A).
+3. Walk the pack's **five advices** as a setup checklist; adopt what applies;
+   record deviations as the receiving project's first ledger entry.
+4. Adopted lessons enter the receiving project tagged with provenance; they
+   are engineering constraints, not user decisions — the user may re-class
+   any of them.
+
+## Boundaries — what this skill never does
+
+- Never copies strategy, product facts, personas, pricing, channels, client
+  names, or account identities between projects — in either direction.
+- Never treats the ledger as a decision register; decisions live in the
+  project's own truth/decision files with their own provenance rules.
+- Never edits other skills or the user's global config.
+- Never reads a project's quarantined/archived material to "enrich" a pack;
+  distillation input is the ledger and the live files only.
+
+## Relationship to adjacent skills
+
+- **iteration-close** — closes an iteration of a continuing direction (distill,
+  delete baggage, tag, seed). Run experience-pack's Protocol B as part of it if
+  both are installed; iteration-close owns the closure ritual.
+- **Decontamination / fresh-start skills** — when a direction is REPLACED, the
+  boundary test here is the same test used to decide what survives; the
+  decontamination skill owns the purge mechanics.
+- This skill is product-agnostic and must stay that way: if a project's noun
+  ever appears in this file or its references, that is a defect — remove it.
+
+## Reference
+
+`references/rebuild-experience-pack.md` — the packaged, noun-free experience
+from a real five-rebuild contamination saga: the six contamination doors, the
+source-lock reset method, the three-probe verification stack, the multi-AI
+collaboration protocol, and the five prevention advices.
