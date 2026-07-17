@@ -56,6 +56,23 @@ Rules: record process experience, not product facts; if the workspace has
 contamination-hygiene rules (banned nouns), the ledger obeys them; never
 backdate or rewrite old entries — append corrections as new entries.
 
+Binding rules (added 2026-07-18, distilled from the second adopter project):
+
+- **Recording is part of done.** An incident's fix may not be declared complete
+  until its ledger entry exists — the ledger is a gate, not a diary. (Its first
+  adopter backfilled 8 entries in one day because nothing forced writing at
+  incident time; firefights never leave time for diaries.)
+- **Bootstrap imports are legitimate, silent backdating is not.** When adopting
+  the pack on a project with history: date each entry by its INCIDENT date and
+  declare the import in a dated note at the top of the ledger. An entry dated in
+  the past without a declared import is fabrication.
+- **Distribution hygiene.** The ledger contains project internals. In a repo
+  with a public remote, gitignore `EXPERIENCE.md` by default; publish only the
+  boundary-tested portable layer.
+- **Discoverability.** Add one pointer line to the project's primary truth file
+  (CLAUDE.md / system map / state doc) so a zero-context agent can FIND the
+  ledger; an undiscoverable ledger records nothing for the next session.
+
 ## Protocol B — DISTILL (boundary test)
 
 For each ledger entry marked "Portable? yes/not yet", run the tests in order:
@@ -72,7 +89,10 @@ For each ledger entry marked "Portable? yes/not yet", run the tests in order:
    or let it die.
 
 Survivors are rewritten as one abstract imperative line + why + how to apply,
-tagged with provenance ("prior project, distilled · date"). Ambiguous items
+tagged with provenance ("prior project, distilled · date"). Write the portable
+layer in English (or bilingually): the ledger may use any language the project
+lives in, but portable lessons travel to strangers — project-local idiom
+strands them. Ambiguous items
 default to DIE — the ledger keeps them recoverable for a later pass.
 DOWNGRADE (rare): a strategy-shaped artifact re-enters another project only as
 an explicit HYPOTHESIS with a re-validation condition, and only by the user's
@@ -104,7 +124,11 @@ call — never silently.
 
 - **iteration-close** — closes an iteration of a continuing direction (distill,
   delete baggage, tag, seed). Run experience-pack's Protocol B as part of it if
-  both are installed; iteration-close owns the closure ritual.
+  both are installed; iteration-close owns the closure ritual. **Caveat both
+  skills must honor:** "git history is the archive" holds ONLY for tracked
+  files. Untracked/gitignored material (private IP in a public repo) has no
+  archive — quarantine it under an explicit local rule (e.g. `_retired/`)
+  before any purge; deleting it is permanent loss, not cleanup.
 - **Decontamination / fresh-start skills** — when a direction is REPLACED, the
   boundary test here is the same test used to decide what survives; the
   decontamination skill owns the purge mechanics.
