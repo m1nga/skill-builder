@@ -40,6 +40,36 @@ if grep -qx "$NAME" "$REPO/private.list"; then
   exit 1
 fi
 
+# Pre-flight lint — fail fast BEFORE any symlink/list mutation, on the two footguns that bit
+# real releases this session: an over-long description and a colon-in-YAML frontmatter break.
+python3 - "$SOURCE/SKILL.md" <<'PY' || exit 2
+import sys, re
+try:
+    import yaml
+except Exception:
+    yaml = None
+text = open(sys.argv[1], encoding="utf-8").read()
+m = re.match(r"^---\n(.*?)\n---\n", text, re.S)
+if not m:
+    print("pre-flight: no --- frontmatter block found", file=sys.stderr); sys.exit(1)
+fm = m.group(1)
+if yaml:
+    try:
+        data = yaml.safe_load(fm) or {}
+    except Exception as e:
+        print(f"pre-flight: invalid YAML in frontmatter (quote values containing a colon) — {e}", file=sys.stderr); sys.exit(1)
+    desc = data.get("description", "")
+else:
+    dm = re.search(r"^description:\s*(.*)$", fm, re.M)
+    desc = dm.group(1) if dm else ""
+n = len(str(desc))
+if n == 0:
+    print("pre-flight: empty description", file=sys.stderr); sys.exit(1)
+if n > 1024:
+    print(f"pre-flight: description is {n} chars (max 1024) — trim {n-1024}", file=sys.stderr); sys.exit(1)
+print(f"pre-flight OK: description {n}/1024 chars, YAML valid")
+PY
+
 ensure_visible() {
   local root="$1" target="$1/$NAME"
   mkdir -p "$root"

@@ -1,6 +1,6 @@
 ---
 name: conclude-rounds
-description: Conclude the last N rounds of the CURRENT conversation, in Chinese by default. Read back over the recent exchanges — both the user's questions AND the assistant's answers, including code written, decisions made, and progress — and hand back a tight conclusion covering what was asked, what was actually done and verified vs merely proposed, where things stand now, and what is still open or needs the user's call. N defaults to 4 and is read from what the user says (前4轮 / past 3 / 前面5个来回 / 前面两个问题). This is an IN-conversation recap, read-only — it never changes files, and it is NOT a cross-session daily digest. Run whenever the user says 总结前面N轮 / 总结一下前面 / 小结一下 / 结论一下 / 回顾前面几轮 / 前4轮 / 这几轮做了啥 / conclude the last N rounds / recap the last few rounds / summarize what we just did / catch me up on this thread — even without naming the skill. Works identically in Claude Code and Codex.
+description: Conclude the last N rounds of the CURRENT conversation, in Chinese by default, AND hand back 5 evidence-based insights for working more efficiently with Claude Code. Read back over the recent exchanges — both the user's questions AND the assistant's answers, including code written, decisions made, and progress — then give a tight conclusion (what was asked, what was actually done and verified vs merely proposed, current state, open decisions) followed by 5 concrete Claude-Code-usage insights drawn from patterns in those rounds. N defaults to 4 and is read from what the user says (前4轮 / past 3 / 前面5个来回 / 前面两个问题). This is an IN-conversation recap, read-only — it never changes files, and it is NOT a cross-session daily digest. Run whenever the user says 总结前面N轮 / 总结一下前面 / 小结一下 / 结论一下 / 回顾前面几轮 / 前4轮 / 这几轮做了啥 / conclude the last N rounds / recap the last few rounds / summarize what we just did / catch me up on this thread — even without naming the skill. Works identically in Claude Code and Codex.
 ---
 
 # conclude-rounds — conclude the last N rounds of this conversation
@@ -50,10 +50,32 @@ Keep it tight — synthesize, don't transcribe. Adapt length to how much actuall
 
 ## 悬而未决 / 待你拍板
 [还开着的问题、等你选择的决定；没有就写“无”]
+
+## 5 点 Claude Code 提效洞察
+[5 条，每条：模式（带本轮证据）→ Claude Code 机制 → 第一步；不足 5 条真的就少写]
 ```
 
 Omit any section that would be empty rather than padding it. If the user asked for just "一句话"
-or a one-line catch-up, give only the 一句话结论.
+or a one-line catch-up, give only the 一句话结论 and skip the insights.
+
+## The 5 Claude Code insights — what makes them worth reading
+
+After the recap, mine the SAME rounds for how the work itself could run better in Claude Code.
+This is the reason the skill earns its keep: the recap says what happened, the insights turn that
+history into a faster next session. Rules that keep them from being generic filler:
+
+1. **Evidence from these rounds, not general advice.** Every insight cites a concrete thing that
+   happened — a manual loop repeated, a re-run caused by a footgun, a friction the user voiced, a
+   verification skipped. "Consider using subagents" with no evidence is banned.
+2. **Tied to a real Claude Code mechanism.** Name the lever: a hook (PostToolUse / Stop), a
+   `~/.claude/CLAUDE.md` rule, a skill, a slash command, a subagent or the Workflow tool for
+   fan-out, an MCP, a settings change. An insight the user can't act on isn't one.
+3. **Ranked by leverage**, most impactful first; each ends with a one-line first step concrete
+   enough to start in a minute.
+4. **At most 5, fewer if the rounds don't honestly support 5.** Three real insights beat five
+   padded ones — never manufacture insights to hit the number.
+
+Good shape: `模式（证据：本轮发生的 X）→ 机制（Claude Code 的 Y）→ 第一步（现在能做的 Z）`.
 
 ## Boundaries
 
