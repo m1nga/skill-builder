@@ -1,4 +1,0 @@
-interface:
-  display_name: "Explain AI Reply"
-  short_description: "Turn confusing AI replies into clear Chinese"
-  default_prompt: "Use $explain-ai-reply to explain my original request and this AI response in plain Chinese."

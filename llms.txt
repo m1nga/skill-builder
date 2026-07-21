@@ -10,8 +10,7 @@
 - iteration-close: close a product iteration in any repo — distill decisions into the repo, delete dead files (git history is the archive), verify upload and a cold-start takeover probe, rehearse the one-command bootstrap, tag and seed the next iteration
 - experience-pack: keep a per-project experience ledger, distill it into portable lessons via an experience-vs-decision boundary test (experience inherits, decisions die), and reuse a packaged five-rebuild contamination saga with five prevention advices
 - product-experience-officer: perform a zero-context first-time-user product audit and return prioritized, actionable UX findings
-- morning-brief: create an overnight cross-session work digest with progress, open loops, and evidence-based work improvements
-- explain-ai-reply: explain a confusing AI response against the original request and separate verified, claimed, proposed, failed, missed, and user-required work
+- conclude-rounds: conclude the last N rounds of the current conversation in Chinese — what was asked, what's done-and-verified vs proposed, current state, and open decisions (N adjustable, read-only)
 - think4ming: thinking-partner protocol — restore the real need, inventory live reality, open options, one recommendation, hand back the decisions
 - prompt4ming: lightly clarify rough or voice-dictated input while preserving meaning and avoiding prompt overengineering
 - prompt-craft: turn casual ideas into AI-ready prompts with an optional bring-your-own local knowledge layer

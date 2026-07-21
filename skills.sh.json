@@ -14,13 +14,12 @@
     },
     {
       "title": "Prompts and work",
-      "description": "Clarify intent, craft reusable prompts, and synthesize daily work.",
+      "description": "Clarify intent, craft reusable prompts, and recap what a conversation actually produced.",
       "skills": [
-        "explain-ai-reply",
+        "conclude-rounds",
         "think4ming",
         "prompt4ming",
-        "prompt-craft",
-        "morning-brief"
+        "prompt-craft"
       ]
     },
     {
