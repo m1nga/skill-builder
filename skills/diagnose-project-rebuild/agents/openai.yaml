@@ -1,0 +1,4 @@
+interface:
+  display_name: "Diagnose Project Rebuild"
+  short_description: "Diagnose whether a project needs recovery, repair, or rebuild"
+  default_prompt: "Use $diagnose-project-rebuild to inspect this project, identify its actual failure mode, and establish the safest next foundation."

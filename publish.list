@@ -2,6 +2,7 @@
 # ~/.claude/skills (a symlink to the canonical Codex/agent copy is fine). Completing a skill
 # authorizes release; this is not a manual approval list.
 coffee-brewing
+diagnose-project-rebuild
 map-product-system
 loop-system-architect
 product-experience-officer

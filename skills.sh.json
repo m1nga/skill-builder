@@ -4,8 +4,9 @@
   "groupings": [
     {
       "title": "Product building",
-      "description": "Map the product system, audit the experience users encounter, and close each iteration cleanly.",
+      "description": "Diagnose project state, map the product system, audit the user experience, and close each iteration cleanly.",
       "skills": [
+        "diagnose-project-rebuild",
         "map-product-system",
         "loop-system-architect",
         "product-experience-officer",
