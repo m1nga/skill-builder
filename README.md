@@ -25,7 +25,7 @@ client data, personal business context, and third-party skills stay local.
 | [iteration-close](skills/iteration-close/) | Closes a product iteration in any repo: distills this round's decisions into the repo's own record, deletes superseded files (git history is the archive), verifies upload and a zero-context takeover probe separately, rehearses the one-command new-machine bootstrap, then tags and seeds the next iteration. Adapts to each repo's conventions and creates the minimum where one is missing. |
 | [product-experience-officer](skills/product-experience-officer/) | Experiences a product-in-development as a zero-context first-time user, then reports prioritized UX findings, concrete fixes, effort estimates, and follow-ups. |
 | [conclude-rounds](skills/conclude-rounds/) | Concludes the last N rounds of the current conversation (in Chinese by default): what was asked, what was actually done and verified vs merely proposed, where things stand, and what still needs a decision. N is adjustable; read-only; in-conversation recap, not a cross-session digest. |
-| [think4ming](skills/think4ming/) | A thinking-partner protocol for "help me think this through": restores the real need behind rough dictated words, inventories current reality from the live system, opens the option space, gives one recommendation with trade-offs, and hands back only the decisions the author must make. |
+| [think4ming](skills/think4ming/) | An automatic, local thinking mode for ambiguous framing and consequential decisions: separates examples from goals, keeps meaningful alternatives open, selects only perspectives that change the judgment, and yields to research or execution without asking the author to invoke it. |
 | [prompt4ming](skills/prompt4ming/) | Lightly clarifies rough, voice-dictated, bilingual, or self-correcting input while preserving the author's meaning and direct style; it avoids forcing a verbose intermediate prompt. |
 | [prompt-craft](skills/prompt-craft/) | Turns casual ideas into AI-ready prompts using an optional local knowledge layer; private brand and user context are excluded from this repository. |
 | [coffee-brewing](skills/coffee-brewing/) | Reads coffee photos and taste feedback to recommend grind, temperature, ratio, time, recipes, and iterative dial-in adjustments for a specific setup. |
@@ -102,4 +102,4 @@ catalog and GEO surfaces, commit, push, and verify a remote Skills CLI install. 
 pre-existing and third-party skills are never inferred to be publishable. `README.md` and
 `llms.txt` remain factual discovery surfaces without keyword stuffing or artificial activity.
 
-_Last updated: 2026-07-23_
+_Last updated: 2026-07-28_
