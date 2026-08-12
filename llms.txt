@@ -12,6 +12,7 @@
 - experience-pack: keep a per-project experience ledger, distill it into portable lessons via an experience-vs-decision boundary test (experience inherits, decisions die), and reuse a packaged five-rebuild contamination saga with five prevention advices
 - product-experience-officer: perform a zero-context first-time-user product audit and return prioritized, actionable UX findings
 - conclude-rounds: conclude the last N rounds of the current conversation in Chinese — what was asked, what's done-and-verified vs proposed, current state, and open decisions (N adjustable, read-only)
+- desktop-package: package the current task's content into one new macOS Desktop folder for human pickup — distilled Chinese documents plus copies of outputs, with a fixed entry file covering conclusion, contents, and open items (copy-by-default; never touches existing Desktop items)
 - think4ming: automatic local thinking mode — clarify ambiguous framing, separate examples from goals, preserve live alternatives, choose consequential perspectives, and yield to research or execution
 - prompt4ming: lightly clarify rough or voice-dictated input while preserving meaning and avoiding prompt overengineering
 - prompt-craft: turn casual ideas into AI-ready prompts with an optional bring-your-own local knowledge layer

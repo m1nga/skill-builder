@@ -15,9 +15,10 @@
     },
     {
       "title": "Prompts and work",
-      "description": "Clarify intent, craft reusable prompts, and recap what a conversation actually produced.",
+      "description": "Clarify intent, craft reusable prompts, recap what a conversation actually produced, and package it for review.",
       "skills": [
         "conclude-rounds",
+        "desktop-package",
         "think4ming",
         "prompt4ming",
         "prompt-craft"
