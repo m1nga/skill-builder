@@ -1,5 +1,14 @@
 # Agent skills for product thinking and daily work
 
+> **This collection has moved.** Each maintained skill now lives in its own
+> standalone product repository with an independent description, install path,
+> and release history. [Browse Ming's standalone skill products](https://github.com/m1nga?tab=repositories&q=topic%3Am1nga-skill), including
+> [diagnose-project-rebuild](https://github.com/m1nga/diagnose-project-rebuild)
+> and [map-product-system](https://github.com/m1nga/map-product-system).
+
+This repository remains online only so old links keep working. New releases are
+published from the [skills source registry](https://github.com/m1nga/skills).
+
 [![skills.sh](https://skills.sh/b/m1nga/skill-builder)](https://skills.sh/m1nga/skill-builder)
 
 Practical `SKILL.md` workflows I built for my own work and use across Claude Code, Codex,
