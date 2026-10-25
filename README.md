@@ -27,6 +27,7 @@ client data, personal business context, and third-party skills stay local.
 
 | Skill | What it does |
 |---|---|
+| [major-tom](skills/major-tom/) | Translates human intent into scoped work for existing owners, selects rules and references, verifies actual outcomes, and retains evidence-based learning. Includes a read-only command-packet validator; creates no scheduler or agent runtime. |
 | [diagnose-project-rebuild](skills/diagnose-project-rebuild/) | Diagnoses whether a confused, inherited, partially lost, repeatedly rebuilt, or direction-changing project needs recovery, purpose clarification, repair, a clean rebuild, continuation, or retirement—then establishes the smallest evidence-based foundation without forcing every project through one fixed sequence. |
 | [map-product-system](skills/map-product-system/) | Maps a rough product idea or existing product end to end: user journeys, capability boundaries, platform/customer/runtime mandates, data lifecycles, agent-service-human responsibilities, architecture, failure paths, governance, gaps, and delivery slices. |
 | [loop-system-architect](skills/loop-system-architect/) | Designs, audits, and operationalizes agent loops with machine-readable contracts, triggers, persistent state, independent verification, recovery, open skill discovery, experience distillation, controlled evolution, and deterministic completeness checks. |
@@ -112,4 +113,4 @@ catalog and GEO surfaces, commit, push, and verify a remote Skills CLI install. 
 pre-existing and third-party skills are never inferred to be publishable. `README.md` and
 `llms.txt` remain factual discovery surfaces without keyword stuffing or artificial activity.
 
-_Last updated: 2026-08-12_
+_Last updated: 2026-10-25_

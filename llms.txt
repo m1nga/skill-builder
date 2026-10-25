@@ -5,6 +5,8 @@
 
 ## Skills
 
+- major-tom: turn human directives into scoped work for existing owners; separate intent, rules, references, skills and experience; validate command packets, verify outcomes and retain grounded learning without a new runtime
+
 - diagnose-project-rebuild: diagnose whether a confused, inherited, partially lost, repeatedly rebuilt, or direction-changing project needs recovery, purpose clarification, repair, a clean rebuild, continuation, or retirement, then establish the smallest evidence-based next foundation without a universal sequence
 - map-product-system: map a product end to end across user journeys, capabilities, mandates, data, agents/services/humans, architecture, failures, governance, gaps, and delivery slices
 - loop-system-architect: design, audit, and operationalize agent loops with machine-readable contracts, triggers, persistent state, independent verification, failure recovery, open skill discovery, experience distillation, controlled evolution, and a deterministic linter
