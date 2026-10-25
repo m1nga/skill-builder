@@ -5,6 +5,8 @@
 
 ## Skills
 
+- work-memory: keep selective sourced work across conversations, retrieve by project, revise lessons from recorded uses and observed outcomes, expose coverage gaps with optional host receipts, and export portable checksummed handovers without credentials or account-history cloning
+
 - editorial-design: design and revise source-grounded images and short videos; verify exported media and review delivery; apply scoped human visual corrections without treating silence as aesthetic approval
 
 - major-tom: turn human directives into scoped work for existing owners; separate intent, rules, references, skills and experience; validate command packets, verify outcomes and retain grounded learning without a new runtime
