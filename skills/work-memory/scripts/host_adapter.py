@@ -76,7 +76,37 @@ def cwd_path(value: object) -> Path:
     return path.resolve()
 
 
-def project_root(cwd: Path) -> Path | None:
+def bound_project(directory: Path, host: str | None, session: str | None) -> Path | None:
+    """Explicit host/session binding to an existing child project; never guess."""
+    binding = directory / '.work-memory-binding.json'
+    if not host or not session or not binding.is_file() or binding.is_symlink():
+        return None
+    try:
+        if binding.stat().st_size > 65536:
+            return None
+        data = json.loads(binding.read_text(encoding='utf-8'))
+        matches = [p for p in data.get('projects', [])
+                   if p.get('host') == host and session in p.get('session_ids', [])]
+        if data.get('version') != 1 or len(matches) != 1:
+            return None
+        item = matches[0]
+        relative = Path(item['root'])
+        if relative.is_absolute() or '..' in relative.parts:
+            return None
+        candidate = (directory / relative).resolve()
+        if not candidate.is_relative_to(directory.resolve()):
+            return None
+        marker, db = candidate / '.work-memory', candidate / PROJECT_DB
+        if marker.is_symlink() or db.is_symlink() or not db.is_file():
+            return None
+        with closing(sqlite3.connect(db.as_uri() + '?mode=ro', uri=True, timeout=1)) as conn:
+            row = conn.execute("SELECT value FROM meta WHERE key='project_id'").fetchone()
+        return candidate if row and row[0] == item.get('project_id') else None
+    except (OSError, ValueError, TypeError, KeyError, AttributeError, sqlite3.Error):
+        return None
+
+
+def project_root(cwd: Path, host: str | None = None, session: str | None = None) -> Path | None:
     """Read-only discovery; marker and DB must already exist, without symlinks."""
     if not cwd.is_dir():
         return None
@@ -87,6 +117,9 @@ def project_root(cwd: Path) -> Path | None:
             continue
         if marker.is_dir() and db.is_file():
             return candidate
+        bound = bound_project(candidate, host, session)
+        if bound:
+            return bound
     return None
 
 
@@ -107,7 +140,7 @@ def receipt(raw: str, host: str) -> dict | None:
     if not isinstance(message, str):
         raise ValueError("invalid final message")
     cwd = cwd_path(payload.get("cwd"))
-    root = project_root(cwd)
+    root = project_root(cwd, host, session)
     canonical = json.dumps(payload, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode("utf-8")
     payload_hash = digest(canonical)
     # Never use a timestamp as a fabricated host turn ID. A fallback fingerprint
@@ -272,12 +305,21 @@ def status_report(state_dir: str, root: str | None = None, limit: int = 50) -> d
         sql = "SELECT * FROM receipts"
         params = ()
         if root_filter:
-            sql += " WHERE root=?"
+            sql += " WHERE root=? OR root IS NULL"
             params = (root_filter,)
         # Counts cover all observed receipts, not just the display limit.
         for row in conn.execute(sql + " ORDER BY observed_at DESC", params):
             item = dict(row)
-            item.update(checkpoint_status(item))
+            # Preserve original metadata; a later binding only resolves its scope.
+            effective = item['root']
+            if not effective:
+                resolved = project_root(Path(item['cwd']), item['host'], item['session_id'])
+                effective = str(resolved) if resolved else None
+            if root_filter and effective != root_filter:
+                continue
+            item['effective_root'] = effective
+            item['root_resolution'] = 'recorded' if item['root'] else 'current_explicit_binding_or_ancestor' if effective else 'unresolved'
+            item.update(checkpoint_status(dict(item, root=effective)))
             result["observed_receipts"] += 1
             code = item["checkpoint_status"]
             result["counts"][code] = result["counts"].get(code, 0) + 1

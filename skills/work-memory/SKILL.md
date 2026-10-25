@@ -81,6 +81,8 @@ adapters record minimal turn receipts so missing checkpoints are visible. They c
 the agent's mind, prove extraction quality, or learn by themselves. No background model
 calls or scheduler are installed. A normal turn-ending event does not cover every crash,
 interruption, unsupported host, or uninitialized workspace.
+If the host launches above the actual project root, use the explicit session-scoped
+binding in `references/host-integration.md`; do not create a second memory store.
 
 Do not claim full historical coverage or long-term effectiveness from a passing demo.
 Report coverage gaps, pending outcomes and stale sources distinctly. The loop contract at

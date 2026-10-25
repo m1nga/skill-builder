@@ -88,6 +88,50 @@ class AdapterTests(unittest.TestCase):
         report = adapter.status_report(str(self.state))
         self.assertEqual(report["counts"], {"uninitialized_project": 1})
 
+    def bind_parent(self):
+        with closing(sqlite3.connect(self.root / adapter.PROJECT_DB)) as conn, conn:
+            conn.execute('CREATE TABLE meta(key TEXT PRIMARY KEY,value TEXT)')
+            conn.execute("INSERT INTO meta VALUES('project_id','project-identity')")
+        binding = {'version':1, 'projects':[{'root':'project', 'project_id':'project-identity',
+                    'host':'codex','session_ids':['thread-123']}]}
+        path = self.base / '.work-memory-binding.json'
+        path.write_text(json.dumps(binding))
+        return path, binding
+
+    def test_parent_launch_bound_only_for_exact_host_session_and_project_identity(self):
+        self.initialize()
+        path, binding = self.bind_parent()
+        self.assertEqual(adapter.project_root(self.base, 'codex', 'thread-123'), self.root)
+        self.assertIsNone(adapter.project_root(self.base, 'codex', 'another-thread'))
+        self.assertIsNone(adapter.project_root(self.base, 'claude', 'thread-123'))
+        binding['projects'][0]['project_id'] = 'wrong-project'
+        path.write_text(json.dumps(binding))
+        self.assertIsNone(adapter.project_root(self.base, 'codex', 'thread-123'))
+
+    def test_later_binding_exposes_gap_without_rewriting_observed_receipt(self):
+        self.initialize()
+        adapter.observe(self.codex(cwd=str(self.base)), 'codex', str(self.state))
+        self.bind_parent()
+        item = adapter.status_report(str(self.state), str(self.root))['receipts'][0]
+        self.assertIsNone(item['root'])
+        self.assertEqual(item['effective_root'], str(self.root))
+        self.assertEqual(item['checkpoint_status'], 'pending_checkpoint')
+        with closing(sqlite3.connect(self.root/adapter.PROJECT_DB)) as conn, conn:
+            conn.execute("INSERT INTO checkpoints(turn_key,no_change) VALUES('codex:thread-123:turn-456',0)")
+        self.assertEqual(adapter.status_report(str(self.state), str(self.root))['counts'], {'checkpointed':1})
+        with closing(sqlite3.connect(self.state/adapter.DB_NAME)) as conn:
+            self.assertIsNone(conn.execute('SELECT root FROM receipts').fetchone()[0])
+
+    def test_ambiguous_or_escaping_binding_fails_closed(self):
+        self.initialize()
+        path, binding = self.bind_parent()
+        binding['projects'].append(dict(binding['projects'][0]))
+        path.write_text(json.dumps(binding))
+        self.assertIsNone(adapter.project_root(self.base, 'codex', 'thread-123'))
+        binding['projects'] = [dict(binding['projects'][0], root='../outside')]
+        path.write_text(json.dumps(binding))
+        self.assertIsNone(adapter.project_root(self.base, 'codex', 'thread-123'))
+
     def test_parent_project_found_and_nested_marker_preferred(self):
         self.initialize()
         nested = self.root / "src" / "feature"

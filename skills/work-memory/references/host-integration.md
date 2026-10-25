@@ -76,6 +76,22 @@ not prompts, replies or transcript content. The state directory must be 0700, da
 
 ## Reconcile honestly
 
+When a host launches in a parent workspace but memory belongs to an existing child
+project, bind only known host/session IDs in a private `.work-memory-binding.json`
+at that workspace. Do not initialize a second store or guess among child directories:
+
+```json
+{"version":1,"projects":[{"root":"project-subdirectory","project_id":"existing-project-id","host":"codex","session_ids":["known-thread-id"]}]}
+```
+
+Use the ID from `memory.py status` and preserve unrelated bindings. The target must
+already exist below that workspace and match the project ID; ambiguous mappings,
+traversal and symlinked stores are rejected. Keep machine routing out of public releases.
+Future callbacks discover the binding without changing the payload or downstream
+notifier. `status` also resolves previously unbound receipts: `root` remains recorded
+metadata, `effective_root` shows current resolution. This exposes checkpoint gaps; it
+does not backfill content or mark them complete. Check a real later completion.
+
 Codex exact receipt key: `codex:<thread-id>:<turn-id>`. Missing turn IDs and Claude Stop use a
 payload fingerprint, explicitly a weaker identity that may collapse identical events.
 Checkpoint session matches are informational only. Exact key matches count as checkpointed;
