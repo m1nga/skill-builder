@@ -1,0 +1,4 @@
+interface:
+  display_name: "Editorial Design"
+  short_description: "Create truthful visuals and learn from scoped human edits"
+  default_prompt: "Use $editorial-design to make an image or short video from these sources and apply my relevant prior corrections."

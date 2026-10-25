@@ -27,6 +27,7 @@ client data, personal business context, and third-party skills stay local.
 
 | Skill | What it does |
 |---|---|
+| [editorial-design](skills/editorial-design/) | Designs and revises editorial images and short videos from verified sources; carries scoped human edits into later work and separates publishing permission from aesthetic approval. |
 | [major-tom](skills/major-tom/) | Translates human intent into scoped work for existing owners, selects rules and references, verifies actual outcomes, and retains evidence-based learning. Includes a read-only command-packet validator; creates no scheduler or agent runtime. |
 | [diagnose-project-rebuild](skills/diagnose-project-rebuild/) | Diagnoses whether a confused, inherited, partially lost, repeatedly rebuilt, or direction-changing project needs recovery, purpose clarification, repair, a clean rebuild, continuation, or retirement—then establishes the smallest evidence-based foundation without forcing every project through one fixed sequence. |
 | [map-product-system](skills/map-product-system/) | Maps a rough product idea or existing product end to end: user journeys, capability boundaries, platform/customer/runtime mandates, data lifecycles, agent-service-human responsibilities, architecture, failure paths, governance, gaps, and delivery slices. |

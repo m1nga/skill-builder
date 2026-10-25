@@ -5,6 +5,8 @@
 
 ## Skills
 
+- editorial-design: design and revise source-grounded images and short videos; verify exported media and review delivery; apply scoped human visual corrections without treating silence as aesthetic approval
+
 - major-tom: turn human directives into scoped work for existing owners; separate intent, rules, references, skills and experience; validate command packets, verify outcomes and retain grounded learning without a new runtime
 
 - diagnose-project-rebuild: diagnose whether a confused, inherited, partially lost, repeatedly rebuilt, or direction-changing project needs recovery, purpose clarification, repair, a clean rebuild, continuation, or retirement, then establish the smallest evidence-based next foundation without a universal sequence
