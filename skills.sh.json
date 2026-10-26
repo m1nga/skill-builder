@@ -16,7 +16,7 @@
     },
     {
       "title": "Prompts and work",
-      "description": "Clarify intent, execute through accountable owners, retain sourced project memory with explicit session routing, and package actual results for review.",
+      "description": "Clarify intent, execute through accountable owners, retain sourced project memory with bounded recall and explicit session routing, and package actual results for review.",
       "skills": [
         "major-tom",
         "work-memory",

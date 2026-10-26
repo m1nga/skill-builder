@@ -406,10 +406,23 @@ class Ledger:
         total = len(selected)
         return [row for _, row in selected[:limit]], excluded, total
 
-    def recall(self, query, limit, explore):
+    def recall(self, query, limit, explore, brief=False):
         rows, excluded, total = self.select(query, limit, explore)
-        return {"records": [self.present(row) for row in rows], "excluded": excluded,
-                "total_matching": total, "truncated": total > limit, "query": query, "explore": explore}
+        result = {"records": [self.present(row) for row in rows],
+                  "total_matching": total, "truncated": total > limit, "query": query, "explore": explore}
+        if brief:
+            counts = {}
+            for item in excluded:
+                counts[item["reason"]] = counts.get(item["reason"], 0) + 1
+            summary = {"excluded_count": len(excluded), "excluded_by_reason": counts,
+                       "excluded_details": "Full exclusion IDs: omit --brief."}
+            if len(canonical(summary).encode()) < len(canonical({"excluded": excluded}).encode()):
+                result.update(summary)
+            else:
+                result["excluded"] = excluded
+        else:
+            result["excluded"] = excluded
+        return result
 
     def use(self, obj):
         reject_secrets(obj)
@@ -722,10 +735,13 @@ def main(argv=None):
     parser.add_argument("--query", default="")
     parser.add_argument("--limit", type=int, default=None, help="recall defaults to 20; export defaults to all selected eligible records")
     parser.add_argument("--explore", action="store_true")
+    parser.add_argument("--brief", action="store_true", help="recall only: preserve selected records, summarize excluded metadata when shorter")
     parser.add_argument("--out")
     args = parser.parse_args(argv)
     ledger = None
     try:
+        if args.brief and args.command != "recall":
+            raise MemoryError("--brief applies only to recall")
         if args.limit is not None and not 1 <= args.limit <= 1000:
             raise MemoryError("limit must be between 1 and 1000")
         obj = None
@@ -748,7 +764,7 @@ def main(argv=None):
         if args.command in {"init", "status"}:
             result = ledger.status()
         elif args.command == "recall":
-            result = ledger.recall(args.query, args.limit or 20, args.explore)
+            result = ledger.recall(args.query, args.limit or 20, args.explore, brief=args.brief)
         elif args.command == "export":
             if not args.out:
                 raise MemoryError("export requires --out NEW_DIRECTORY")

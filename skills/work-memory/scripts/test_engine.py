@@ -81,6 +81,42 @@ class EngineTests(unittest.TestCase):
         self.assertEqual(len(self.ledger.recall("产品", 20, True)["records"]), 5)
         self.assertEqual(self.ledger.recall("unrelated", 20, True)["records"], [])
 
+    def test_brief_recall_preserves_records_and_exclusion_reasons(self):
+        first = self.capture("current")["record"]
+        self.capture("current", expected_revision=first["revision"], supersedes_reason="User revision", summary="产品验证 changed")
+        for i in range(10):
+            self.capture("proposal-" + str(i), authority="assistant")
+        full = self.ledger.recall("", 1, False)
+        brief = self.ledger.recall("", 1, False, brief=True)
+        for key in ["records", "total_matching", "truncated", "query", "explore"]:
+            self.assertEqual(full[key], brief[key])
+        self.assertNotIn("excluded", brief)
+        self.assertEqual(brief["excluded_count"], len(full["excluded"]))
+        self.assertEqual(brief["excluded_by_reason"], {"superseded": 1, "status_proposed": 10})
+        self.assertEqual(self.ledger.recall("", 1, False), full)
+
+    def test_brief_never_expands_small_recall_outputs(self):
+        self.capture()
+        for i in range(3):
+            full = self.ledger.recall("", 1, False)
+            brief = self.ledger.recall("", 1, False, brief=True)
+            self.assertEqual(brief['records'], full['records'])
+            self.assertLessEqual(len(memory.canonical(brief).encode()), len(memory.canonical(full).encode()))
+            self.capture('proposal-' + str(i), authority='assistant')
+
+    def test_brief_cli_is_recall_only(self):
+        self.capture()
+        script = Path(memory.__file__)
+        result = subprocess.run([sys.executable, str(script), 'recall', '--root', str(self.root), '--limit', '1', '--brief'], capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        value = json.loads(result.stdout)
+        self.assertEqual(value['records'][0]['authority'], 'user')
+        self.assertIn('source', value['records'][0])
+        self.assertEqual(value['excluded'], [])
+        rejected = subprocess.run([sys.executable, str(script), 'status', '--root', str(self.root), '--brief'], capture_output=True, text=True)
+        self.assertEqual(rejected.returncode, 2)
+        self.assertFalse(json.loads(rejected.stderr)['ok'])
+
     def test_proposals_cannot_suppress_authoritative_current_truth(self):
         for kind in ("decision", "preference"):
             self.capture(kind, kind=kind)

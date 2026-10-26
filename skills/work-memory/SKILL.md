@@ -17,6 +17,8 @@ select from current task evidence; do not blend them. Do not scan the whole comp
 
 Read `references/commands.md` when operating the CLI. Run `status` and a bounded `recall`
 for the current need. Initialize and register a root only when work merits continuity.
+For routine CLI recall use a small `--limit` with `--brief`: selected evidence stays
+complete while excluded metadata becomes reason counts; omit it for exclusion audits.
 An existing TaskDock `TASK.json` identity is reused; its STATE/PLAN and repository documents
 remain authoritative. Do not create a second competing product specification.
 

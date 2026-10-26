@@ -17,7 +17,14 @@ python3 SCRIPT_DIR/registry.py list
 python3 SCRIPT_DIR/registry.py locate --query "Project name"
 python3 SCRIPT_DIR/registry.py recall --project "Project name" --query "review policy" --limit 8
 python3 SCRIPT_DIR/memory.py recall --root ROOT --query "review policy" --limit 8
+python3 SCRIPT_DIR/memory.py recall --root ROOT --query "review policy" --limit 3 --brief
 ```
+
+For routine recall, `--brief` keeps every selected record and its authority, source,
+revision, applicability and status unchanged. It summarizes only excluded-record
+metadata by reason when that is smaller; already-small outputs stay unchanged.
+Omit it when investigating specific stale/superseded IDs.
+It does not change retrieval, storage, selection limits or export contents.
 
 `init` is explicit and idempotent. The registry stores paths/identity only. If the selected
 project has several registered locations, select one exact root; do not merge copies.
