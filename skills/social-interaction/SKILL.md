@@ -22,7 +22,9 @@ new accounts, agents, schedulers, tracking services or external messages.
 
 ## Choose a contribution
 
-Read the original post, relevant thread, available media and prior relationship record.
+Read the original post, relevant thread, prior relationship record and only the media needed
+to support the contribution. A reply about the text can proceed without testing the entire
+product or watching unrelated video; limit the claim to what was actually read or viewed.
 Distinguish what was actually viewed or tested from what the author merely describes.
 Identify the person's purpose, the immediate audience, and one useful contribution. Content
 can have multiple tags; do not force an opinion, question or sales invitation from a label.
