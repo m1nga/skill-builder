@@ -27,6 +27,7 @@ client data, personal business context, and third-party skills stay local.
 
 | Skill | What it does |
 |---|---|
+| [social-editorial](skills/social-editorial/) | Builds original and attributed quote posts around reader purpose, supported judgment and brand voice; separates observed facts, interpretation, future intent and publication outcomes. |
 | [social-interaction](skills/social-interaction/) | Writes context-specific replies with useful perspectives, answers, practical help or specific appreciation; preserves relationship history and avoids formulaic engagement. |
 | [work-memory](skills/work-memory/) | Retains selected, sourced work across conversations; routes recall by project; tests lessons through actual uses, outcomes and independent review; and exports checksummed handover bundles with unresolved and failed guidance labeled. Includes a local SQLite CLI with optional compact recall that preserves selected evidence and summarizes exclusion metadata only when smaller, plus metadata-only Codex/Claude completion adapters with explicit parent-workspace session binding and visible checkpoint gaps; not a transcript crawler or automatic account migration. |
 | [editorial-design](skills/editorial-design/) | Designs and revises editorial images and short videos from verified sources; carries scoped human edits into later work and separates publishing permission from aesthetic approval. |

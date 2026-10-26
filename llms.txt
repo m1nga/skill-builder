@@ -5,6 +5,8 @@
 
 ## Skills
 
+- social-editorial: Builds original and attributed quote posts around reader purpose, supported judgment and brand voice; separates observed facts, interpretation, future intent and publication outcomes.
+
 - social-interaction: Writes context-specific replies with useful perspectives, answers, practical help or specific appreciation; preserves relationship history and avoids formulaic engagement.
 
 - work-memory: keep selective sourced work across conversations, retrieve by project with optional compact exclusion metadata that preserves selected evidence, revise lessons from recorded uses and observed outcomes, expose coverage gaps with optional host receipts and explicit session-to-project binding, and export portable checksummed handovers without credentials or account-history cloning
