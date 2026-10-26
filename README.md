@@ -27,6 +27,7 @@ client data, personal business context, and third-party skills stay local.
 
 | Skill | What it does |
 |---|---|
+| [partnership-correspondence](skills/partnership-correspondence/) | Prepares institution-specific fit enquiries and collaboration messages with concrete contributions, bounded requests, accurate commitments and the original authorized sender. |
 | [creator-participation](skills/creator-participation/) | Supports fit-based invitations, onboarding, first contributions, feedback and return while respecting refusals, private sharing, prior contact and unknown delivery. |
 | [social-editorial](skills/social-editorial/) | Builds original and attributed quote posts around reader purpose, supported judgment and brand voice; separates observed facts, interpretation, future intent and publication outcomes. |
 | [social-interaction](skills/social-interaction/) | Writes context-specific replies with useful perspectives, answers, practical help or specific appreciation; preserves relationship history and avoids formulaic engagement. |
