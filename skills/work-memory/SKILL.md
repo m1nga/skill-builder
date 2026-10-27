@@ -59,6 +59,14 @@ confounded result; record inconclusive and design a better comparison when worth
 
 ## Cross-window and export
 
+When deciding whether the current chat should continue, re-anchor/compact, or move to a
+clean session, use the installed `session-health` skill when available. It owns context
+disposition; work-memory owns sourced continuity and receipts. Before a necessary switch,
+capture meaningful deltas and checkpoint the next action in the existing project store;
+the receiving session verifies current sources and unresolved actions before continuing.
+Do not infer successful transfer from a saved checkpoint or initialize a second store at
+a parent chat directory. Without session-health, preserve these continuity checks directly.
+
 All windows operating on the same root use one transactional store with revision checks.
 The private registry routes to project roots; it is not a global pool of product facts.
 If a project is copied or moved, resolve the location explicitly instead of merging histories.

@@ -5,6 +5,8 @@
 
 ## Skills
 
+- session-health: assess whether to continue, re-anchor/compact, or start a clean session from observed context failures and correction outcomes; connect handoffs to work-memory while preserving owners and unknown actions, without fixed token thresholds, background monitoring or automatic chat creation
+
 - partnership-correspondence: Prepares institution-specific fit enquiries and collaboration messages with concrete contributions, bounded requests, accurate commitments and the original authorized sender.
 
 - creator-participation: Supports fit-based invitations, onboarding, first contributions, feedback and return while respecting refusals, private sharing, prior contact and unknown delivery.
@@ -13,7 +15,7 @@
 
 - social-interaction: Writes context-specific replies with useful perspectives, answers, practical help or specific appreciation; preserves relationship history and avoids formulaic engagement.
 
-- work-memory: keep selective sourced work across conversations, retrieve by project with optional compact exclusion metadata that preserves selected evidence, revise lessons from recorded uses and observed outcomes, expose coverage gaps with optional host receipts and explicit session-to-project binding, and export portable checksummed handovers without credentials or account-history cloning
+- work-memory: keep selective sourced work across conversations, retrieve by project with optional compact exclusion metadata, revise lessons from recorded uses and observed outcomes, expose coverage gaps with host receipts and explicit session-to-project binding, connect necessary session-health boundaries to checkpoints and verified recovery, and export portable checksummed handovers without credentials or account-history cloning
 
 - editorial-design: design and revise source-grounded images and short videos; verify exported media and review delivery; apply scoped human visual corrections without treating silence as aesthetic approval
 
@@ -33,6 +35,10 @@
 - coffee-brewing: interpret coffee photos and taste feedback to recommend recipes and iterative dial-in adjustments
 
 ## Recommended pairing
+
+Use session-health for context disposition and work-memory for sourced continuity and
+checkpoint receipts. Install both with `npx skills add m1nga/skill-builder --skill session-health --skill work-memory`.
+The optional upstream context-degradation skill is installed separately and is not redistributed here.
 
 Use map-product-system directly on raw product thinking. Use prompt4ming first only when a
 portable, lightly cleaned prompt is needed; chaining is optional.

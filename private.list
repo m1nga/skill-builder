@@ -8,6 +8,7 @@
 # brand-voice-enforcement — marketing suite install
 # validate-evaluator — eval suite install
 # write-judge-prompt — eval suite install
+# context-degradation — third-party context-engineering collection; installed unchanged
 find-skills
 grilling
 humanizer
@@ -17,3 +18,4 @@ marketing-psychology
 brand-voice-enforcement
 validate-evaluator
 write-judge-prompt
+context-degradation

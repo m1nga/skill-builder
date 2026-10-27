@@ -27,11 +27,12 @@ client data, personal business context, and third-party skills stay local.
 
 | Skill | What it does |
 |---|---|
+| [session-health](skills/session-health/) | Assesses whether a task should continue in its current chat, re-anchor/compact, or move to a clean session using observed drift and correction outcomes; connects necessary handoffs to work-memory while preserving owners and unresolved actions. No background monitor or automatic chat creation. |
 | [partnership-correspondence](skills/partnership-correspondence/) | Prepares institution-specific fit enquiries and collaboration messages with concrete contributions, bounded requests, accurate commitments and the original authorized sender. |
 | [creator-participation](skills/creator-participation/) | Supports fit-based invitations, onboarding, first contributions, feedback and return while respecting refusals, private sharing, prior contact and unknown delivery. |
 | [social-editorial](skills/social-editorial/) | Builds original and attributed quote posts around reader purpose, supported judgment and brand voice; separates observed facts, interpretation, future intent and publication outcomes. |
 | [social-interaction](skills/social-interaction/) | Writes context-specific replies with useful perspectives, answers, practical help or specific appreciation; preserves relationship history and avoids formulaic engagement. |
-| [work-memory](skills/work-memory/) | Retains selected, sourced work across conversations; routes recall by project; tests lessons through actual uses, outcomes and independent review; and exports checksummed handover bundles with unresolved and failed guidance labeled. Includes a local SQLite CLI with optional compact recall that preserves selected evidence and summarizes exclusion metadata only when smaller, plus metadata-only Codex/Claude completion adapters with explicit parent-workspace session binding and visible checkpoint gaps; not a transcript crawler or automatic account migration. |
+| [work-memory](skills/work-memory/) | Retains selected, sourced work across conversations; routes recall by project; tests lessons through actual uses, outcomes and independent review; and exports checksummed handover bundles with unresolved and failed guidance labeled. Includes a local SQLite CLI with optional compact recall, metadata-only Codex/Claude completion adapters with explicit session binding and visible checkpoint gaps, and an optional session-health handoff boundary; not a transcript crawler or automatic account migration. |
 | [editorial-design](skills/editorial-design/) | Designs and revises editorial images and short videos from verified sources; carries scoped human edits into later work and separates publishing permission from aesthetic approval. |
 | [major-tom](skills/major-tom/) | Translates human intent into scoped work for existing owners, selects rules and references, verifies actual outcomes, and retains evidence-based learning. Includes a read-only command-packet validator; creates no scheduler or agent runtime. |
 | [diagnose-project-rebuild](skills/diagnose-project-rebuild/) | Diagnoses whether a confused, inherited, partially lost, repeatedly rebuilt, or direction-changing project needs recovery, purpose clarification, repair, a clean rebuild, continuation, or retirement—then establishes the smallest evidence-based foundation without forcing every project through one fixed sequence. |
@@ -46,6 +47,20 @@ client data, personal business context, and third-party skills stay local.
 | [prompt4ming](skills/prompt4ming/) | Lightly clarifies rough, voice-dictated, bilingual, or self-correcting input while preserving the author's meaning and direct style; it avoids forcing a verbose intermediate prompt. |
 | [prompt-craft](skills/prompt-craft/) | Turns casual ideas into AI-ready prompts using an optional local knowledge layer; private brand and user context are excluded from this repository. |
 | [coffee-brewing](skills/coffee-brewing/) | Reads coffee photos and taste feedback to recommend grind, temperature, ratio, time, recipes, and iterative dial-in adjustments for a specific setup. |
+
+## Session continuity across task types
+
+Use `session-health` to decide whether the current chat should continue, re-anchor/compact,
+or move to a clean session. It diagnoses from observed behavior rather than chat length or
+fixed context percentages. Pair it with `work-memory` to retain sourced deltas and a
+checkpoint before a necessary boundary, then verify current sources on the receiving side.
+For deeper active-failure diagnosis it can consult the separately installed third-party
+[`context-degradation`](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/tree/main/skills/context-degradation)
+skill, which is not redistributed here.
+
+Install the continuity pair with `npx skills add m1nga/skill-builder --skill session-health --skill work-memory`.
+Applying it across tasks requires a small instruction in the local host's global entrypoint;
+skill installation alone does not update existing chats, other machines or web sessions.
 
 ## Recommended pairing: prompt clarity + product architecture
 
@@ -119,4 +134,4 @@ catalog and GEO surfaces, commit, push, and verify a remote Skills CLI install. 
 pre-existing and third-party skills are never inferred to be publishable. `README.md` and
 `llms.txt` remain factual discovery surfaces without keyword stuffing or artificial activity.
 
-_Last updated: 2026-10-26_
+_Last updated: 2026-10-27_
