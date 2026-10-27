@@ -62,6 +62,13 @@ Remove internal audit narration unless it affects the reader's decision. Preserv
 opinions and accepted distinctive phrasing; editing should fix concrete problems rather than
 flatten every piece into the same polite voice.
 
+Make editorial corrections affect the next draft, not just its receipt. Carry a relevant
+observed defect and a concrete writing choice in the compact context before drafting; for
+example, replace an abstract invitation with the particular work/action, or preserve a scene
+lost through shortening. Supply that context to the existing reviewer as well. Do not turn a
+scoped defect into a universal ban on instruction, questions, professional language or brevity.
+Naturalness is not achieved by deleting articles or removing the referent of a sentence.
+
 ## Learn from the right signal
 
 Keep first output, exact final version and meaningful edits in the existing case. Record
@@ -70,3 +77,6 @@ independent editorial review assesses the draft; audience response informs usefu
 relationship; verified downstream action informs participation. None substitutes for another.
 Record absent observations as unknown. Evaluate on later new cases, retaining failures and
 first drafts; do not claim improved voice from storing examples or selecting a better retry.
+When comparing the next production batch, match conversational purpose and speaking identity,
+retain misses and disclose different topics or facts. Separate a newly supplied input from
+an observable improvement in the actual first draft and published result.

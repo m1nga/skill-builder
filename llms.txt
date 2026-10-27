@@ -5,17 +5,17 @@
 
 ## Skills
 
-- community-voice: Selects evidence-backed speaker voice, community context and scoped human corrections for natural multilingual social writing; keeps private examples separate from reusable method.
+- community-voice: Builds evidence-backed speaker voice and community context; carries scoped corrections into first drafts and reviews, then compares actual later outputs without treating publication as human approval.
 
 - session-health: assess whether to continue, re-anchor/compact, or start a clean session from observed context failures and correction outcomes; connect handoffs to work-memory while preserving owners and unknown actions, without fixed token thresholds, background monitoring or automatic chat creation
 
 - partnership-correspondence: Prepares institution-specific fit enquiries and collaboration messages with concrete contributions, bounded requests, accurate commitments and the original authorized sender.
 
-- creator-participation: Supports fit-based invitations, onboarding, first contributions, feedback and return while respecting refusals, private sharing, prior contact and unknown delivery.
+- creator-participation: Supports concrete voluntary invitations, onboarding, first contributions, feedback and return while respecting refusals, prior contact and unknown delivery.
 
-- social-editorial: Builds original and attributed quote posts around reader purpose, supported judgment and brand voice; separates observed facts, interpretation, future intent and publication outcomes.
+- social-editorial: Builds original and attributed quote posts around reader purpose and supported judgment; makes details carry the argument and preserves context when shortening.
 
-- social-interaction: Writes context-specific replies with useful perspectives, answers, practical help or specific appreciation; preserves relationship history and avoids formulaic engagement.
+- social-interaction: Writes context-specific replies with useful perspectives, concrete answers, practical help or appreciation; keeps invitations specific and background proportionate to the conversation.
 
 - work-memory: keep selective sourced work across conversations, retrieve by project with optional compact exclusion metadata, revise lessons from recorded uses and observed outcomes, expose coverage gaps with host receipts and explicit session-to-project binding, connect necessary session-health boundaries to checkpoints and verified recovery, and export portable checksummed handovers without credentials or account-history cloning
 

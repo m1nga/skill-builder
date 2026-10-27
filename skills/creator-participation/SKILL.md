@@ -42,6 +42,12 @@ Explain the relevant offering, why this particular person/work fits, what specif
 invited, and one accurate entry point. State material limits and known effort plainly. Make
 room to decline. A real appreciation does not have to become an invitation.
 
+Make the invitation usable in this conversation: connect the actual work or stated intent to
+one concrete voluntary action. Avoid a vague request to share a journey or discuss next steps
+when the work itself is the relevant starting point. Do not invent a project decision or ask
+an unnecessary question to make the invitation sound specific. Keep explanation proportional
+to what the recipient already knows.
+
 Prioritize actual inbound intent and due promises under the current project strategy.
 After interest, identify the smallest useful step toward the person’s chosen contribution;
 registration alone may not complete it. Do not ask for another commitment while a promised

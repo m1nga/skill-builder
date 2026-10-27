@@ -35,7 +35,9 @@ need, seeing what changed, or considering a future direction. Use
 Inspect the relevant original sources and recent actual publications. Separate historical
 experience, current capability, observed result, interpretation and future intent. A model
 suggestion is a lead, not corroboration. Screenshots demonstrate only what is visible;
-generated visuals do not prove product behaviour. Reuse approved factual material without
+generated visuals do not prove product behaviour. A visible interface alone does not establish
+real ownership, governance, efficiency or causal impact; keep interpretation conditional where
+the evidence supports only a possibility. Reuse approved factual material without
 inventing fresh experience or rebuilding an unchanged approved draft.
 
 ## Form a specific piece
@@ -44,6 +46,13 @@ Write a one-sentence thesis or reader benefit before drafting. Select details th
 it; let the source determine the structure. A story may need a scene and decision; an opinion
 needs reasoning; a demo needs an understandable task and visible result. Avoid interchangeable
 advice that could sit under any product. Do not make all posts tutorials, debates or pitches.
+
+When a piece depends on a real making or use moment, let that moment establish the point
+before generalizing. A hypothetical example can still work when clearly framed and developed;
+do not invent a lived scene to make advice feel personal. Each named detail should explain a
+choice, effect or constraint. If two alternatives appear, use their distinction in the argument
+or omit the unused detail; do not pick a winner without evidence. Remove a restatement that
+adds no new understanding. A useful ending may finish the scene rather than supply a maxim.
 
 For curation, check the project's actual recommendation/repost criteria. Preserve attribution
 and the original link. A quote post must add a discernible judgment or context; paraphrasing
@@ -64,6 +73,12 @@ Review both truth and editorial achievement: can a cold reader identify the subj
 point, and why these details matter? Did editing preserve a supported stance? Review images,
 full video/audio, captions, alt text and links against the exact final copy using the project's
 media workflow. No simulated media may masquerade as an observed outcome.
+
+When shortening for a platform limit, cut repetition or a secondary claim before cutting the
+subject, necessary background or readable syntax. Check the actual channel limit early; then
+read the final copy as a stranger. A compressed sentence that needs the source packet to make
+sense is not ready. Apply a known voice correction to the first Writer input and existing
+Editor brief, without adding a new review stage.
 
 Store exact output/version, sources, review outcome and subsequent native receipt in the
 existing case. Separate prepared, approved, published, and observed response. Retain unknown

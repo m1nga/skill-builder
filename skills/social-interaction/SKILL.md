@@ -51,6 +51,13 @@ Preserve a defensible point of view; do not manufacture disagreement or neutrali
 opinion with empty hedging. Avoid interchangeable praise, unsolicited diagnoses, formulaic
 praise-question-link endings and questions whose answer would change nothing.
 
+Respond to the immediate question or visible choice rather than turning it into a general
+lesson. Use only the background the other person needs; unfamiliar readers of a standalone
+post may need more. In a practical answer, retain the exact resource or next step and qualify
+availability accurately. Plain language should reduce effort without dropping useful details.
+If an invitation follows, name the concrete work and action instead of an abstract programme
+phrase. A short reply can remain just appreciation, humour or a useful answer.
+
 Check the intended meaning, factual support, identity, relationship history and any link.
 Use the existing short-reply review path; do not add a multi-model pipeline to ordinary
 comments. If the task becomes a full editorial or complex invitation, use that existing path.
