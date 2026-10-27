@@ -27,6 +27,7 @@ client data, personal business context, and third-party skills stay local.
 
 | Skill | What it does |
 |---|---|
+| [community-voice](skills/community-voice/) | Selects evidence-backed speaker voice, community context and scoped human corrections for natural multilingual social writing; keeps private examples separate from reusable method. |
 | [session-health](skills/session-health/) | Assesses whether a task should continue in its current chat, re-anchor/compact, or move to a clean session using observed drift and correction outcomes; connects necessary handoffs to work-memory while preserving owners and unresolved actions. No background monitor or automatic chat creation. |
 | [partnership-correspondence](skills/partnership-correspondence/) | Prepares institution-specific fit enquiries and collaboration messages with concrete contributions, bounded requests, accurate commitments and the original authorized sender. |
 | [creator-participation](skills/creator-participation/) | Supports fit-based invitations, onboarding, first contributions, feedback and return while respecting refusals, private sharing, prior contact and unknown delivery. |

@@ -9,6 +9,11 @@ Make a worthwhile next step clear and help the person complete it voluntarily.
 
 ## Project context and authority
 
+Use a supplied compact voice context: speaker, audience/community, purpose, applicable human
+correction and selected example IDs. When voice selection or localization is uncertain, use
+community-voice if installed; otherwise derive these from the brief. This is not a mandatory
+extra pass. Keep human-approved examples distinct from operator drafts and community samples.
+
 Use the current project's instruction or role-entry pointer to its editorial/brand contract.
 Read only the relevant identity, voice, language and case material; reuse unchanged context.
 Keep this private material in the project, outside the published skill. Never borrow another
@@ -37,7 +42,10 @@ Explain the relevant offering, why this particular person/work fits, what specif
 invited, and one accurate entry point. State material limits and known effort plainly. Make
 room to decline. A real appreciation does not have to become an invitation.
 
-After interest, solve the current barrier: explain a step, locate an accurate guide, clarify
+Prioritize actual inbound intent and due promises under the current project strategy.
+After interest, identify the smallest useful step toward the person’s chosen contribution;
+registration alone may not complete it. Do not ask for another commitment while a promised
+answer or practical obstacle remains unresolved. Solve the current barrier: explain a step, locate an accurate guide, clarify
 scope, or route a real issue to its owner. Ask only for missing information needed to help;
 do not request credentials or unnecessary private material. A visible complaint is not proof
 of cause or a completed fix. Never promise attention or free work by other people.

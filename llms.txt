@@ -5,6 +5,8 @@
 
 ## Skills
 
+- community-voice: Selects evidence-backed speaker voice, community context and scoped human corrections for natural multilingual social writing; keeps private examples separate from reusable method.
+
 - session-health: assess whether to continue, re-anchor/compact, or start a clean session from observed context failures and correction outcomes; connect handoffs to work-memory while preserving owners and unknown actions, without fixed token thresholds, background monitoring or automatic chat creation
 
 - partnership-correspondence: Prepares institution-specific fit enquiries and collaboration messages with concrete contributions, bounded requests, accurate commitments and the original authorized sender.

@@ -9,6 +9,11 @@ Understand what the person is doing before deciding what to say.
 
 ## Project context and authority
 
+Use a supplied compact voice context: speaker, audience/community, purpose, applicable human
+correction and selected example IDs. When voice selection or localization is uncertain, use
+community-voice if installed; otherwise derive these from the brief. This is not a mandatory
+extra pass. Keep human-approved examples distinct from operator drafts and community samples.
+
 Use the current project's instruction or role-entry pointer to its editorial/brand contract.
 Read only the relevant identity, voice, language and case material; reuse unchanged context.
 Keep this private material in the project, outside the published skill. Never borrow another

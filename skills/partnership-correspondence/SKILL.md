@@ -9,6 +9,11 @@ Offer something useful to a particular institution and make the next decision ea
 
 ## Project context and authority
 
+Use a supplied compact voice context: speaker, audience/community, purpose, applicable human
+correction and selected example IDs. When voice selection or localization is uncertain, use
+community-voice if installed; otherwise derive these from the brief. This is not a mandatory
+extra pass. Keep human-approved examples distinct from operator drafts and community samples.
+
 Use the current project's instruction or role-entry pointer to its editorial/brand contract.
 Read only the relevant identity, voice, language and case material; reuse unchanged context.
 Keep this private material in the project, outside the published skill. Never borrow another
@@ -22,6 +27,9 @@ new accounts, agents, schedulers, tracking services or external messages.
 
 ## Read the opportunity
 
+Apply the project's current opportunity criteria using dated, attributable evidence;
+reputation alone does not establish fit or an open participation window. Keep existing real
+relationships even when new-discovery priorities change.
 Inspect the institution's current programme, actual contact route, relevant eligibility and
 the original relationship/case. Prioritize real replies and promises before fresh approaches.
 Distinguish exploratory fit, a formal application, sponsorship, procurement and an accepted
